@@ -65,7 +65,44 @@ function reset() {
     $(".darthvhp").html(characters.DarVad.healthPoints);
     $(".darthmhp").html(characters.DarMaul.healthPoints);
     
-    
-    
-    
-    };
+};
+
+const characters = { 
+
+    ObiWan: {
+        name: "ObiWan",
+        visual: 'assets/images/obi_wan.jpeg',
+        healthPoints: 120,
+        attackPower: 8,
+        fullName: "Obi-Wan Kenobi",
+        counterAttackPower: 24
+        },
+        
+    LukeSky:{
+        name: "LukeSky",
+        visual: 'assets/images/luke.jpg',
+        healthPoints: 100,
+        attackPower: 10,
+        fullName: "Luke Skywalker",
+        counterAttackPower: 5
+        },
+        
+    DarVad:{ 
+        name: "DarVad",
+        visual: 'assets/images/Darth_Vader.jpg',
+        healthPoints: 150,
+        attackPower: 10,
+        fullName: "Darth Vader",
+        counterAttackPower: 20
+        },
+        
+    DarMaul:{ 
+        name: "DarMaul",
+        visual: 'assets/images/DarthMaul.jpg',
+        healthPoints: 180,
+        attackPower: 12,
+        fullName: "Darth Maul",
+        counterAttackPower: 25
+        }
+};
+        
