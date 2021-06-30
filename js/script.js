@@ -106,3 +106,102 @@ const characters = {
         }
 };
         
+$(document).ready(function(){
+    reset();
+    
+    
+    $(".firstRow").click(function(){
+            
+       if (myChar == "") {
+       console.log(this);	       
+       $(this).appendTo("#yourChar");
+       myChar = $(this);
+       YourCharacter = $(myChar).attr("value");
+          }
+       if (YourCharacter == characters.ObiWan.name) {
+               attackerHP = characters.ObiWan.healthPoints;
+               attackerAP = characters.ObiWan.attackPower;
+               attackerCAP = characters.ObiWan.counterAttackPower;
+               attackerFN = characters.ObiWan.fullName;
+               attack = characters.ObiWan;
+       }
+       else if (YourCharacter == characters.LukeSky.name){
+               attackerHP = characters.LukeSky.healthPoints;
+               attackerAP = characters.LukeSky.attackPower;
+               attackerCAP = characters.LukeSky.counterAttackPower;
+               attackerFN = characters.LukeSky.fullName;
+               attack = characters.LukeSky;
+       }
+       else if (YourCharacter == characters.DarVad.name){
+               attackerHP = characters.DarVad.healthPoints;
+               attackerAP = characters.DarVad.attackPower;
+               attackerCAP = characters.DarVad.counterAttackPower;
+               attackerFN = characters.DarVad.fullName;
+               attack = characters.DarVad;
+       }
+       else if (YourCharacter == characters.DarMaul.name){
+               attackerHP = characters.DarMaul.healthPoints;
+               attackerAP = characters.DarMaul.attackPower;
+               attackerCAP = characters.DarMaul.counterAttackPower;
+               attackerFN = characters.DarMaul.fullName;
+               attack = characters.DarMaul;
+       }
+             
+       for (var i = 0; i < 4; i++) {
+           $("._" + [i]).not(myChar).appendTo("#enemies" + [i]);
+    
+          
+           $("._" + [i]).not(myChar).css({"background-color": "red", "outline-color": "black", 
+               "border-width": "3px", "outline-style": "solid", "border-color": "black", "outline-width": "1px"});
+    
+    
+       }
+               
+       //clears top
+       $("#picRow").hide();
+      
+    });
+    
+    
+    $(".move").click(function(){
+         $(this).appendTo("#defender");
+         myDef = $(this);
+         YourDefender = $(myDef).children().attr("value");
+         $(".youDefeated").empty();
+    
+       if (YourDefender == characters.ObiWan.name) {
+               defenderHP = characters.ObiWan.healthPoints;
+               defenderAP = characters.ObiWan.attackPower;
+               defenderCAP = characters.ObiWan.counterAttackPower;
+               defenderFN = characters.ObiWan.fullName;
+               defend = characters.ObiWan;
+           
+           }
+           else if (YourDefender == characters.LukeSky.name){
+               defenderHP = characters.LukeSky.healthPoints;
+               defenderAP = characters.LukeSky.attackPower;
+               defenderCAP = characters.LukeSky.counterAttackPower;
+               defenderFN = characters.LukeSky.fullName;
+               defend = characters.LukeSky;
+               
+       }
+       else if (YourDefender == characters.DarVad.name){
+               defenderHP = characters.DarVad.healthPoints;
+               defenderAP = characters.DarVad.attackPower;
+               defenderCAP = characters.DarVad.counterAttackPower;
+               defenderFN = characters.DarVad.fullName;
+               defend = characters.DarVad;
+               
+       }
+       else if (YourDefender == characters.DarMaul.name){
+               defenderHP = characters.DarMaul.healthPoints;
+               defenderAP = characters.DarMaul.attackPower;
+               defenderCAP = characters.DarMaul.counterAttackPower;
+               defenderFN = characters.DarMaul.fullName;
+               defend = characters.DarMaul;
+               
+       }
+    
+    
+    });
+});    
