@@ -1,18 +1,18 @@
-const attack;
-const defend;
-const attackcharacter;
-const attackerHP;
-const attackerAP;
-const attackerCAP;
-const defendcharacter;
-const defenderHP;
-const defenderAP;
-const defenderCAP;
-const name;
-const YourCharacter;
-const YourDefender;
-const myChar = "";
-const myDef = "";
+var attack;
+var defend;
+var attackcharacter;
+var attackerHP;
+var attackerAP;
+var attackerCAP;
+var defendcharacter;
+var defenderHP;
+var defenderAP;
+var defenderCAP;
+var name;
+var YourCharacter;
+var YourDefender;
+var myChar = "";
+var myDef = "";
 
 function reset() {	
 
@@ -22,8 +22,8 @@ function reset() {
     $(".attackButton").show();
     
     // reset myChar and myDef to equal nothing.
-    const myChar = "";
-    const myDef = "";
+    var myChar = "";
+    var myDef = "";
     
     
     
@@ -50,7 +50,7 @@ function reset() {
     
     $(".nameo").html(characters.ObiWan.fullName);
     $(".namel").html(characters.LukeSky.fullName);
-    $(".nameds").html(characters.DarVad.fullName);
+    $(".namedv").html(characters.DarVad.fullName);
     $(".namedm").html(characters.DarMaul.fullName);
     
     //add picture
@@ -64,10 +64,12 @@ function reset() {
     $(".lukehp").html(characters.LukeSky.healthPoints);
     $(".darthvhp").html(characters.DarVad.healthPoints);
     $(".darthmhp").html(characters.DarMaul.healthPoints);
+
+    
     
 };
 
-const characters = { 
+var characters = { 
 
     ObiWan: {
         name: "ObiWan",
@@ -151,7 +153,7 @@ $(document).ready(function(){
            $("._" + [i]).not(myChar).appendTo("#enemies" + [i]);
     
           
-           $("._" + [i]).not(myChar).css({"background-color": "red", "outline-color": "black", 
+           $("._" + [i]).not(myChar).css({"background-color": "green", "outline-color": "black", 
                "border-width": "3px", "outline-style": "solid", "border-color": "black", "outline-width": "1px"});
     
     
@@ -204,4 +206,79 @@ $(document).ready(function(){
     
     
     });
+
+//attack function
+$(".attackButton").click(function(){
+
+    if ($("#defender").children().length == 0) {
+        $(".noEnemy").html("No enemy here.");
+    }
+
+    if (!(attackerHP < 1) || !(defenderHP < 1)) {
+    attackerHP = (attackerHP - defenderCAP);
+    $("." + YourCharacter).html(attackerHP);
+
+    $(".youAttacked").html("You attacked " + defenderFN + " for " + attackerAP + " damage.");
+
+    defenderHP = (defenderHP - attackerAP);
+
+    $(".attackedBack").html(defenderFN + " attacked you back for " + defenderCAP + " damage.");
+
+   $("." + YourDefender).html(defenderHP);
+
+} 
+   
+    if (defenderHP <= 0) {
+
+        $(".youAttacked").empty();
+        $(".attackedBack").empty();
+        $(".youDefeated").html("You have defeated " + defenderFN + ", you can choose to fight another enemy.");
+
+        $("#defender").empty();
+
+        console.log(attackerAP);
+        attackerAP = (attackerAP + 10);
+
+        attack.attackPower = attackerAP;
+        console.log(attackerAP);
+
+    }
+    
+    if ($(".move").children().length == 0){
+
+     $(".youAttacked").empty();
+     $(".attackedBack").empty();
+     $(".youDefeated").empty();
+     $(".noEnemy").empty();
+     $(".youWon").html("You Won!!!! GAME OVER!!!"); 
+
+     $(".restart").show();
+
+     $(".restart").click(function(){
+         location.reload(true);
+     })
+                      
+    }
+
+    if (attackerHP <= 0) {
+
+        $(".restart").show();
+
+        $(".attackButton").hide();
+
+        // lose
+        $(".youAttacked").empty();
+         $(".attackedBack").empty();
+        $(".youDefeated").empty();
+        $(".youLose").html("You've been defeated...GAME OVER!!!")
+
+         //new game
+         $(".restart").click(function(){
+             location.reload(true);
+         });
+
+    }      
+    
+});
+
 });    

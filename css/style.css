@@ -1,18 +1,25 @@
 #imagel {
-    width: 40%;
+    width: 20%;
     height:auto;
 }
 
 #imageo {
-    width: 40%;
+    width: 20%;
     height:auto;
 }
 
 #imagedm {
-    width: 40%;
+    width: 20%;
     height:auto;
+}
+
+#imagedv {
+    width: 20%;
+    height: auto;
 }
 
 body {
     background-image: url("assets/images/sw_background.jpg"); 
+    background-color: rgb(114, 113, 113);
 }
+
