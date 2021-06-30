@@ -1,3 +1,16 @@
+h1 {
+    text-align: center;
+    color: chartreuse;
+}
+
+h2 {
+    color: wheat;
+}
+
+h3 {
+    color: wheat;
+}
+
 #imagel {
     width: 20%;
     height:auto;
@@ -19,7 +32,50 @@
 }
 
 body {
-    background-image: url("assets/images/sw_background.jpg"); 
-    background-color: rgb(114, 113, 113);
+    background-image: url('assets/images/star_wars_jedi.jpeg');
+    background-size: 65%;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: top;
+    background-color: rgb(9, 8, 14);
 }
 
+#darthM {
+    color: wheat;
+}
+
+#darthV {
+    color: wheat;
+}
+
+#luke {
+    color: wheat;
+}
+
+#obi {
+    color: wheat;
+}
+
+.youAttacked {
+    color: wheat;
+}
+
+.attackedBack {
+    color: wheat;
+}
+
+.youDefeated {
+    color: wheat;
+}
+
+.youWon {
+    color: wheat;
+}
+
+.youLose {
+    color: wheat;
+}
+
+.noEnemy {
+    color: wheat;
+}

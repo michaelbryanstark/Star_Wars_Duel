@@ -14,6 +14,11 @@ var YourDefender;
 var myChar = "";
 var myDef = "";
 
+$("#instructions").click(function(){
+    alert("Welcome to Star wars Duel! First, you must choose your hero. Next, choose a villian you wish to fight! Clicking the attack button will attack the villian. Whichever person runs out of health first loses. May the Force be with you!");
+})
+
+
 function reset() {	
 
     $("#picRow").show();
@@ -75,7 +80,7 @@ var characters = {
         name: "ObiWan",
         visual: 'assets/images/obi_wan.jpeg',
         healthPoints: 120,
-        attackPower: 8,
+        attackPower: Math.floor(Math.random() * 20),
         fullName: "Obi-Wan Kenobi",
         counterAttackPower: 24
         },
@@ -84,7 +89,7 @@ var characters = {
         name: "LukeSky",
         visual: 'assets/images/luke.jpg',
         healthPoints: 100,
-        attackPower: 10,
+        attackPower: Math.floor(Math.random() * 15),
         fullName: "Luke Skywalker",
         counterAttackPower: 5
         },
@@ -93,7 +98,7 @@ var characters = {
         name: "DarVad",
         visual: 'assets/images/Darth_Vader.jpg',
         healthPoints: 150,
-        attackPower: 10,
+        attackPower: Math.floor(Math.random() * 20),
         fullName: "Darth Vader",
         counterAttackPower: 20
         },
@@ -102,7 +107,7 @@ var characters = {
         name: "DarMaul",
         visual: 'assets/images/DarthMaul.jpg',
         healthPoints: 180,
-        attackPower: 12,
+        attackPower: Math.floor(Math.random() * 17),
         fullName: "Darth Maul",
         counterAttackPower: 25
         }
@@ -153,8 +158,7 @@ $(document).ready(function(){
            $("._" + [i]).not(myChar).appendTo("#enemies" + [i]);
     
           
-           $("._" + [i]).not(myChar).css({"background-color": "green", "outline-color": "black", 
-               "border-width": "3px", "outline-style": "solid", "border-color": "black", "outline-width": "1px"});
+           
     
     
        }
@@ -218,11 +222,11 @@ $(".attackButton").click(function(){
     attackerHP = (attackerHP - defenderCAP);
     $("." + YourCharacter).html(attackerHP);
 
-    $(".youAttacked").html("You attacked " + defenderFN + " for " + attackerAP + " damage.");
+    $(".youAttacked").html(attackerFN + " attacked " + defenderFN + " for " + attackerAP + " damage.");
 
     defenderHP = (defenderHP - attackerAP);
 
-    $(".attackedBack").html(defenderFN + " attacked you back for " + defenderCAP + " damage.");
+    $(".attackedBack").html(defenderFN + " attacked " + attackerFN +" back for " + defenderCAP + " damage.");
 
    $("." + YourDefender).html(defenderHP);
 
