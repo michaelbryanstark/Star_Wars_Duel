@@ -13,4 +13,5 @@ My biggest challenge was figuring out how to make the images in to buttons that 
 ## Additional information:
 This is merely a school project using my favorite movie of all time and is in no way to be used for menetary purposes! All images used are copyright of lucasfilm and disney!! 
 ## App Demo 
-https://github.com/michaelbryanstark/Star_Wars_Duel
+Repo link - https://github.com/michaelbryanstark/Star_Wars_Duel
+Pages link - https://michaelbryanstark.github.io/Star_Wars_Duel/
